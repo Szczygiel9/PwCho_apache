@@ -1,5 +1,5 @@
-FROM python:3.4-alpine
-ADD . /code
-WORKDIR /code
-RUN pip install -r requirements.txt
-CMD ["python", "app.py"]
+FROM ubuntu:latest
+RUN apt-get update
+RUN apt-get install -y apache2
+EXPOSE 80
+CMD apachectl -D FOREGROUND
